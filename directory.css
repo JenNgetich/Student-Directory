@@ -1,0 +1,11 @@
+.mini {
+  height: 50px;
+}
+
+.thumbnail-view {
+  display: inline-block;
+}
+
+.icon{
+  height: 100px;
+  padding: 20px;

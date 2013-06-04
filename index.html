@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Class Directory</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="directory.css">
+</head>
+<body>
+
+  <table class='.table-striped'>
+    <tr>
+      <th>First</th><th>Last</th><th>Email</th><th>GitHub</th><th>Img</th>
+    </tr>
+  </table>
+
+
+<!-- templates -->
+<script id="menu-template" type="text/template">
+  <div><h1>Student Directory</h1></div>
+  <div> 
+    <button class='table-button'>Table View</button>
+    <button class='thumbnail-button'>Thumbnail View</button>
+  </div>
+</script>
+
+<script id="thumbnail-template" type="text/template">
+  <img class='icon' src=<%= photo%>></td></tr>
+</script>
+
+
+<script id="table-template" type="text/template">
+  <td><%= first%></td>
+  <td><%= last%></td>
+  <td><%= email%></td>
+  <td><%= github%></td>
+  <td><img class='mini' src=<%= photo%>></td>
+</script>
+
+
+
+
+<!-- libraries -->
+  <script src="jquery-2.0.1.min.js"></script>
+  <script src="underscore.js"></script>
+  <script src="backbone.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+<!-- models -->
+  <script src="models/student-model.js"></script>
+ 
+<!-- collections -->
+  <script src="collections/class-collection.js"></script>
+
+<!-- views -->
+  <script src="views/thumbnail-view.js"></script>
+  <script src="views/table-view.js"></script>
+  <script src="views/menu-view.js"></script>
+
+
+</body>
+</html>
