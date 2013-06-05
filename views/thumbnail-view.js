@@ -4,6 +4,7 @@ ThumbnailView = Backbone.View.extend({
 
   events: {
     'click .icon': 'details',
+    'hover .icon': 'hover'
   },
 
   initialize: function(){
@@ -24,5 +25,10 @@ ThumbnailView = Backbone.View.extend({
 
   render: function(){
     this.$el.html(thumbnailTemplate(this.model.attributes));
+  },
+
+  hover: function () {
+    console.log('hovering')
+    $('.icon').css('border','2px solid black%');
   }
 });

@@ -6,9 +6,9 @@
 </head>
 <body>
 
-  <table class='.table-striped'>
+  <table class='table table-striped'>
     <tr>
-      <th>First</th><th>Last</th><th>Email</th><th>GitHub</th><th>Img</th>
+      <th></th><th>First</th><th>Last</th><th>Email</th><th>GitHub</th>
     </tr>
   </table>
 
@@ -28,13 +28,21 @@
 
 
 <script id="table-template" type="text/template">
+  <td><img class='mini' src=<%= photo%>></td>
   <td><%= first%></td>
   <td><%= last%></td>
   <td><%= email%></td>
   <td><%= github%></td>
-  <td><img class='mini' src=<%= photo%>></td>
 </script>
 
+<script id="student-template" type="text/template">
+  <img src=<%= photo%>>
+  <h1><%= first%>' '<%= last%></h1>
+  <div>Email:<%= email%></div>
+  <div>Git Hub Account<%= github%></div>
+  <div>Fun Fact: <%= first%> is super cool and awesome</div>
+  <button class='back'>Back to Thumbnails</button>
+</script>
 
 
 
@@ -53,6 +61,7 @@
 <!-- views -->
   <script src="views/thumbnail-view.js"></script>
   <script src="views/table-view.js"></script>
+  <script src="views/student-view.js"></script>
   <script src="views/menu-view.js"></script>
 
 

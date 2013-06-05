@@ -3,7 +3,7 @@ TableView = Backbone.View.extend({
   className: 'table-view',
 
   events: {
-    'click tr': 'details',
+    'click .icon': 'details',
   },
 
   initialize: function(){
@@ -26,8 +26,18 @@ TableView = Backbone.View.extend({
 
   render: function(){
     this.$el.html(tableTemplate(this.model.attributes));
-  }
+  },
 
+  details: function () {
+    $('table').hide()
+    $('.table-view').html('')
+
+    this.$el.html(studentTemplate(this.model.attributes))
+    new StudentView ({
+        model: student
+    });
+    
+  }
 
 });
 

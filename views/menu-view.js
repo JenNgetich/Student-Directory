@@ -11,6 +11,7 @@ MenuView = Backbone.View.extend({
     menuTemplate = _.template($('#menu-template').html())
     thumbnailTemplate = _.template($('#thumbnail-template').html())
     tableTemplate = _.template($('#table-template').html())
+    studentTemplate = _.template($('#student-template').html())
 
     this.render();
     $('body').prepend(this.$el);
