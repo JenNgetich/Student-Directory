@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
   <title>Class Directory</title>
@@ -6,63 +7,118 @@
 </head>
 <body>
 
+
+
+<!-- 
+  __ _  _  _  ___  _   _  _  _  ___  ___ __ 
+ / _/ \| \| ||_ _|/ \ | || \| || __|| o Y _|
+( (( o ) \\ | | || o || || \\ || _| |   |_ \
+ \__\_/|_|\_| |_||_n_||_||_|\_||___||_|\\__/
+
+ -->  
+
+<!-- Menu View -->
+  <div class="menu"></div>
+  
+<!-- Student View -->
+  <div class="student"></div>
+
+<!-- Thumbnail View -->
+  <div class="class-th"></div>
+
+<!-- Table View -->
   <table class='table table-striped'>
-    <tr>
-      <th></th><th>First</th><th>Last</th><th>Email</th><th>GitHub</th>
-    </tr>
+    <tr class='text-left'>
+   </tr>
   </table>
 
 
-<!-- templates -->
-<script id="menu-template" type="text/template">
-  <div><h1>Student Directory</h1></div>
-  <div> 
-    <button class='table-button'>Table View</button>
-    <button class='thumbnail-button'>Thumbnail View</button>
-  </div>
-</script>
 
-<script id="thumbnail-template" type="text/template">
-  <img class='icon' src=<%= photo%>></td></tr>
-</script>
+<!-- 
+ ___  ___  _   _  ___ _     _  ___  ___  __ 
+|_ _|| __|| \_/ || o \ |   / \|_ _|| __|/ _|
+ | | | _| | \_/ ||  _/ |_ | o || | | _| \_ \
+ |_| |___||_| |_||_| |___||_n_||_| |___||__/
 
+ -->
 
-<script id="table-template" type="text/template">
-  <td><img class='mini' src=<%= photo%>></td>
-  <td><%= first%></td>
-  <td><%= last%></td>
-  <td><%= email%></td>
-  <td><%= github%></td>
-</script>
-
-<script id="student-template" type="text/template">
-  <img src=<%= photo%>>
-  <h1><%= first%>' '<%= last%></h1>
-  <div>Email:<%= email%></div>
-  <div>Git Hub Account<%= github%></div>
-  <div>Fun Fact: <%= first%> is super cool and awesome</div>
-  <button class='back'>Back to Thumbnails</button>
-</script>
+ <!-- Menu-View: Page Header & View Change Links -->
+  <script id="menu-template" type="text/template">
+    
+    <div><h1>Student Directory</h1></div>
+    
+    <div> 
+      <a href='#' class='table-button'>Table View</button>
+      <a href='#' class='thumbnail-button'>Thumbnail View</button>
+    </div>
+  
+  </script>
 
 
+<!-- Thumbnail-View: Photos & Names of Students in Class -->
+  <script id="thumbnail-template" type="text/template">
+    
+    <img class='icon' src=<%= photo%>><div class='block'><%= first%></div>
+  
+  </script>
 
-<!-- libraries -->
+
+<!-- Table-View: Tabular Data for Students in Class -->
+  <script id="table-template" type="text/template">
+    
+    <td><img class='mini' src=<%= photo%>></td>
+    <td><%= first%></td>
+    <td><%= last%></td>
+    <td><i class="icon-large icon-envelope"></i> <%= email%> </td>
+    <td></i><%= github%></td>
+
+  </script>
+
+
+<!-- Student-View: Profile View for Single Student -->
+  <script id="student-template" type="text/template">
+    
+    <img src=<%= photo%>>
+    <h3><%= first%> <%= last%></h3>
+    <div>Email:<%= email%></div>
+    <div>Git Hub Account:<%= github%></div>
+    <div>Fun Fact: <%= first%> is super cool and awesome</div>
+    <button class='back'>Back</button>
+
+  </script>
+
+
+
+<!--
+ __  __  ___ _  ___ ___ __ 
+/ _|/ _|| o \ || o \_ _/ _|
+\_ ( (_ |   / ||  _/| |\_ \
+|__/\__||_|\\_||_|  |_||__/
+
+ -->
+
+<!-- Libraries -->
   <script src="jquery-2.0.1.min.js"></script>
   <script src="underscore.js"></script>
   <script src="backbone.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
-<!-- models -->
+
+<!-- Models -->
   <script src="models/student-model.js"></script>
+
  
-<!-- collections -->
+<!-- Collections -->
   <script src="collections/class-collection.js"></script>
 
+
 <!-- views -->
+  <script src="views/student-view.js"></script>
+  <script src="views/student-view-th.js"></script>
   <script src="views/thumbnail-view.js"></script>
   <script src="views/table-view.js"></script>
-  <script src="views/student-view.js"></script>
   <script src="views/menu-view.js"></script>
+
 
 
 </body>

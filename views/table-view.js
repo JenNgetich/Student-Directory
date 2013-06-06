@@ -1,48 +1,65 @@
+//  ___  _   ___ _    ___   _ _  _  ___  _ _ _ 
+// |_ _|/ \ | o ) |  | __| | | || || __|| | | |
+//  | || o || o \ |_ | _|  | V || || _| | V V |
+//  |_||_n_||___/___||___|  \_/ |_||___| \_n_/ 
+
+
+// Define Table View Constructor
 TableView = Backbone.View.extend({
+  
+  // Wrap the view in a tr w/ class table-view
   tagName: 'tr',
   className: 'table-view',
 
+
+  // Listen for a click on the mini icon
   events: {
-    'click .icon': 'details',
+    'click .mini': 'details',
   },
 
-  initialize: function(){
-    
-    console.log('view initialized')
-    
 
+   // Render & Append the view when it is instantiated
+  initialize: function(){
+
+    //Show Appropriate Link to alternate view
+    $('.table-button').hide();
+    $('.thumbnail-button').show();
+    
+    this.render();
+    $('.table').append(this.$el)
+
+
+     // If a student is added make a new view
     this.listenTo(aprClass,'add', function(student){
-      console.log('Got a Student');
       new TableView({
         model: student
       });
     });
 
-    this.render();
-
-    $('table').append(this.$el)
-    console.log('view appended')
   },
 
+ 
+  // When rendering, Pass in the Student Template
   render: function(){
     this.$el.html(tableTemplate(this.model.attributes));
   },
 
-  details: function () {
-    $('table').hide()
-    $('.table-view').html('')
 
-    this.$el.html(studentTemplate(this.model.attributes))
-    new StudentView ({
-        model: student
-    });
+  // Clear Page and Instatiate Student view when mini icon is clicked 
+  details: function() {
+    $('.table').html('')
+    $('.menu-view').html('')
     
+    //Instatiate view with model that was clicked
+    new StudentViewT({
+      model: this.model
+    });  
   }
 
 });
 
 
-
+//Manually Add the Student models to the class collection
 aprClass.add([
    {
   first: 'Andrew',

@@ -3,12 +3,12 @@
 // \_ \ | | | U || o ) _| | \\ | | |  | V || || _| | V V |
 // |__/ |_| |___||__/|___||_|\_| |_|   \_/ |_||___| \_n_/ 
                                                        
-// (From Table View)
+// (From Thumbnail View)
 
 
-// Make a Student View Constructor
-StudentViewT = Backbone.View.extend({
-
+// Make a View Constructor
+StudentViewTh = Backbone.View.extend({
+  
 
   // Wrap the view in a div called studentview
   tagName: 'div',
@@ -34,11 +34,14 @@ StudentViewT = Backbone.View.extend({
   },
 
 
-  // If Back is Clicked, clear Student View and Instantiate Menu View
-  back: function() {
+  // If Back is Clicked, clear Student View 
+  back: function () {
     $('.student').html('')
-    new MenuView();
+    $('.menu').html('')
+
+    // Instantiate Menu View, call Thumbnail function to Instatiate View
+    var backMenu = new MenuView();
+    backMenu.thumbnail()
   }
-
-
+  
 });
