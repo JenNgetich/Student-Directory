@@ -74,7 +74,7 @@
     <td><%= last%></td>
     <td><i class="icon-large icon-envelope"></i> <%= email%> </td>
     <td></i><%= github%></td>
-
+    <td><i class="icon-large icon-remove"></i></td>
   </script>
 
 
@@ -86,12 +86,39 @@
     <div>Email:<%= email%></div>
     <div>Git Hub Account:<%= github%></div>
     <div>Fun Fact: <%= first%> is super cool and awesome</div>
+    <button class='edit'>Edit</button>
     <button class='back'>Back</button>
+
 
   </script>
 
 <!-- Update-View: Update Student (Either Add or Edit-->
   <script id="update-template" type="text/template">
+
+   <div class='inline'>
+      <div>First: <input class='first-input' value='<%= first %>'></div> 
+      <div>Last: <input class='last-input' value='<%= last %>'></div>
+  </div> 
+  
+  <div>Email: <input class='email-input' value='<%= email %>'>
+  </div> 
+  
+  <div>GitHub: <input class='github-input' value='<%= github %>'>
+  </div> 
+
+  <div>Photo URL: <input class='photo-input' value='<%= photo %>'>
+  </div> 
+  
+  <div class='buttons'>
+      <button class='save'>Save</button> 
+      <button class='cancel'>Cancel</button>
+  </div> 
+
+   </script>
+
+
+<!-- Update-View: Update Student (Either Add or Edit-->
+  <script id="add-template" type="text/template">
 
    <div class='inline'>
       <div>First: <input class='first-input'></div> 
@@ -113,6 +140,8 @@
   </div> 
 
    </script>
+
+
 
 
 

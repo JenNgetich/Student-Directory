@@ -18,6 +18,9 @@ StudentViewT = Backbone.View.extend({
   // Listen for a click on the back button
   events: {
     'click .back': 'back',
+    'click .edit': 'edit',
+    'click .cancel': 'cancel',
+    'click .save': 'save'
   },
 
 
@@ -38,7 +41,45 @@ StudentViewT = Backbone.View.extend({
   back: function() {
     $('.student').html('')
     new MenuView();
+  },
+
+  edit: function() {
+    console.log('im editing', this.model.attributes)
+    this.$el.html(updateTemplate(this.model.attributes));
+  },
+
+  cancel: function() {
+    this.$el.html(studentTemplate(this.model.attributes));
+  },
+
+  save: function(){
+
+    if (this.$el.find('.photo-input').val() == ''){
+      this.model.set({
+      photo: this.$el.find('.photo-input').val('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQdUtHnZ2NbfZBQI6RGcaA6LZDEJ-VQ0cJoropCetw9JlZ2PyKS')
+      })
+    }
+
+    if (this.$el.find('.first-input').val() == ''){
+      this.model.set({
+      first: this.$el.find('.first-input').val('Unknown')
+      })
+    }
+
+    this.model.set({
+      first: this.$el.find('.first-input').val(),
+      last: this.$el.find('.last-input').val(),
+      github: this.$el.find('.github-input').val(),
+      email: this.$el.find('.email-input').val(),
+      photo: this.$el.find('.photo-input').val(),
+    })
+
+    
+    this.$el.html(studentTemplate(this.model.attributes));
+
+
   }
+
 
 
 });

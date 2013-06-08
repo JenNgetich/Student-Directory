@@ -18,7 +18,7 @@ AddView = Backbone.View.extend({
   },
 
   render: function(){
-    this.$el.html(updateTemplate());
+    this.$el.html(addTemplate());
   },
 
   save: function(){

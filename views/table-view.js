@@ -15,6 +15,7 @@ TableView = Backbone.View.extend({
   // Listen for a click on the mini icon
   events: {
     'click .mini': 'details',
+    'click .icon-remove': 'remove'
   },
 
 
@@ -54,6 +55,11 @@ TableView = Backbone.View.extend({
     new StudentViewT({
       model: this.model
     });  
+  },
+
+  remove: function() {
+    this.model.destroy();
+    this.$el.html('');
   }
 
 });

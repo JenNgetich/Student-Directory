@@ -32,6 +32,8 @@ MenuView = Backbone.View.extend({
     tableTemplate = _.template($('#table-template').html())
     studentTemplate = _.template($('#student-template').html())
     updateTemplate = _.template($('#update-template').html())
+    addTemplate = _.template($('#add-template').html())
+
 
     // Render & Append the view when it is instantiated
     this.render();
