@@ -26,7 +26,7 @@
     $('.thumbnail-button').hide();
 
     this.render();
-    $('.class-th').append(this.$el)
+    $('.class-th').prepend(this.$el)
 
   // If a student is added make a new view
     this.listenTo(aprClass,'add', function(student){
@@ -50,7 +50,9 @@
     $('.menu-view').html('')
 
     //Instatiate view with model that was clicked
-    new StudentViewTh({model: this.model});
+    new StudentViewTh({
+      model: this.model
+    });
   }
 
 });

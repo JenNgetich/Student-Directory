@@ -1,3 +1,7 @@
+
+
+
+
 //  _   _  ___  _  _  _ _   _ _  _  ___  _ _ _ 
 // | \_/ || __|| \| || | | | | || || __|| | | |
 // | \_/ || _| | \\ || U | | V || || _| | V V |
@@ -15,8 +19,10 @@ MenuView = Backbone.View.extend({
   // Listen for a click on view buttons
   events: {
     'click .table-button': 'table',
-    'click .thumbnail-button': 'thumbnail'
+    'click .thumbnail-button': 'thumbnail',
+    'click .add-button': 'add'    
   },
+
 
 
   initialize: function(){
@@ -25,12 +31,13 @@ MenuView = Backbone.View.extend({
     thumbnailTemplate = _.template($('#thumbnail-template').html())
     tableTemplate = _.template($('#table-template').html())
     studentTemplate = _.template($('#student-template').html())
+    updateTemplate = _.template($('#update-template').html())
 
     // Render & Append the view when it is instantiated
     this.render();
     $('.menu').append(this.$el);
 
-     // If a student is added make a new view
+    // make a new table view for each student
     aprClass.each(function(student){  
       new TableView ({
         model: student
@@ -69,6 +76,16 @@ MenuView = Backbone.View.extend({
         model: student
       });
     });
+  },
+
+
+  add: function(){
+    $('.add-button').hide()
+    $('.table-view').html('')
+    $('.class-th').html('')
+
+
+    new AddView()
   }
 
 });
@@ -76,7 +93,7 @@ MenuView = Backbone.View.extend({
 
 //Instatiate Menu View on page load
 $(document).ready(function(){
-    var MenuViewOrigin = new MenuView();
+  new MenuView();
 });
 
 

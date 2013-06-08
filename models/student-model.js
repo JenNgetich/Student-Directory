@@ -4,6 +4,8 @@ Student = Backbone.Model.extend({
     last: '',
     email: '',
     github: '',
-    photo: ''
+    photo: 'http://designyoutrust.com/wp-content/uploads7/designfetishnophotofacebook1.jpg'
      }
 });
+
+

@@ -32,6 +32,8 @@
    </tr>
   </table>
 
+<!-- Add View -->
+  <div class="add-new"></div>
 
 
 <!-- 
@@ -48,8 +50,9 @@
     <div><h1>Student Directory</h1></div>
     
     <div> 
-      <a href='#' class='table-button'>Table View</button>
-      <a href='#' class='thumbnail-button'>Thumbnail View</button>
+      <a href='#' class='table-button'>[ Table View ] </button>
+      <a href='#' class='thumbnail-button'>[Thumbnail View] </button>
+      <a href='#' class='add-button'> [Add Student]</button>
     </div>
   
   </script>
@@ -87,6 +90,30 @@
 
   </script>
 
+<!-- Update-View: Update Student (Either Add or Edit-->
+  <script id="update-template" type="text/template">
+
+   <div class='inline'>
+      <div>First: <input class='first-input'></div> 
+      <div>Last: <input class='last-input'></div>
+  </div> 
+  
+  <div>Email: <input class='email-input'>
+  </div> 
+  
+  <div>GitHub: <input class='github-input'>
+  </div> 
+
+  <div>Photo URL: <input class='photo-input'>
+  </div> 
+  
+  <div class='buttons'>
+      <button class='save'>Save</button> 
+      <button class='cancel'>Cancel</button>
+  </div> 
+
+   </script>
+
 
 
 <!--
@@ -113,6 +140,7 @@
 
 
 <!-- views -->
+  <script src="views/add-view.js"></script>
   <script src="views/student-view.js"></script>
   <script src="views/student-view-th.js"></script>
   <script src="views/thumbnail-view.js"></script>
