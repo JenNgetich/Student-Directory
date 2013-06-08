@@ -25,7 +25,11 @@ AddView = Backbone.View.extend({
     $('.add-button').show()
 
     if (this.$el.find('.photo-input').val() == ''){
-      this.$el.find('.photo-input').val('http://designyoutrust.com/wp-content/uploads7/designfetishnophotofacebook1.jpg')
+      this.$el.find('.photo-input').val('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQdUtHnZ2NbfZBQI6RGcaA6LZDEJ-VQ0cJoropCetw9JlZ2PyKS')
+    }
+
+    if (this.$el.find('.first-input').val() == ''){
+      this.$el.find('.first-input').val('Unknown')
     }
 
     aprClass.add([{
@@ -43,6 +47,16 @@ AddView = Backbone.View.extend({
     $('.menu-view').html('')
 
     alert('Added new student')
+
+    new MenuView();
+  },
+
+  cancel: function(){
+        $('.add-new').html('')
+    $('.add-button').show()
+    $('.table').html('')
+    $('.class-th').html('')
+    $('.menu-view').html('')
 
     new MenuView();
   }

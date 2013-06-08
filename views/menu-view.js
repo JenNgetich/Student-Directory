@@ -81,6 +81,8 @@ MenuView = Backbone.View.extend({
 
   add: function(){
     $('.add-button').hide()
+    $('.thumbnail-button').hide()
+    $('.table-button').hide()
     $('.table-view').html('')
     $('.class-th').html('')
 
