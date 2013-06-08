@@ -19,6 +19,8 @@ StudentViewTh = Backbone.View.extend({
   events: {
     'click .back': 'back',
     'click .edit': 'edit',
+    'click .cancel': 'cancel',
+    'click .save': 'save'
   },
 
 

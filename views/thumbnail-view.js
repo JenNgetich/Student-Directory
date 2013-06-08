@@ -46,7 +46,7 @@
   // Clear Page and Instatiate Student view when icon is clicked 
   details: function() {
     console.log('you clicked the icon')
-    $('.class-th').hide()
+    $('.class-th').html('')
     $('.menu-view').html('')
 
     //Instatiate view with model that was clicked
