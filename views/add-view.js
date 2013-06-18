@@ -52,7 +52,7 @@ AddView = Backbone.View.extend({
   },
 
   cancel: function(){
-        $('.add-new').html('')
+    $('.add-new').html('')
     $('.add-button').show()
     $('.table').html('')
     $('.class-th').html('')
